@@ -1,0 +1,103 @@
+def end_of_chat():
+    answers = print('Before you leave, are you ready to end chat? Please say "Yes" to end chat')
+   
+    responses = input()
+    for response in responses:
+        if 'Yes' in responses:
+            break
+        else:
+            print('What else do you want to tell me?')
+            input()
+            break
+    return print('Thank you for talking to me')
+    
+def venting_emotion():
+    user_mood = input('I am feeling ')
+    
+    if 'happy' in user_mood:
+        print('Do you want to tell me about your day? ')
+        response = input()
+        if 'Yes' in response:
+            answer = print('Okay, go ahead')
+            input()
+            print('Thank you for sharing, hope you continue to have a happy day!')
+        else:
+            print('Alright then!')
+ 
+    elif 'sad' in user_mood:
+        print('Sorry to hear that, do you want to tell me about your day? ')
+        response = input()
+        if 'Yes' in response:
+            answer = print('Okay, go ahead')
+            input()
+            print('Thank you for sharing, things will get better')
+        else:
+            print('Alright then!')
+            
+    elif 'anxious' in user_mood:
+        print('Sorry to hear that, do you want to tell me about your day? ')
+        response = input()
+        if 'Yes' in response:
+            answer = print('Okay, go ahead')
+            input()
+            print('Thank you for sharing, remember to take a break')
+        else:
+            print('Alright then!')
+    
+    elif 'stressed' in user_mood:
+        print('Sorry to hear that, do you want to tell me about your day? ')
+        response = input()
+        if 'Yes' in response:
+            answer = input('Okay, go ahead')
+            input()
+            print('Thank you for sharing, take a breather, go for a walk')
+        else:
+            print('Alright then!')
+            
+    elif 'angry' in user_mood:
+        print('Sorry to hear that, do you want to tell me about your day? ')
+        response = input()
+        if 'Yes' or 'yes' in response:
+            print('Okay, go ahead')
+            input()
+            print('Thank you for sharing, take a few breathes')
+        else:
+            print('Alright then!')
+            
+    elif 'excited' in user_mood:
+        print('I am glad you are excited, do you want to tell me why? ')
+        response = input()
+        if 'Yes' or 'yes' in response:
+            answer = print('Okay, go ahead')
+            input()
+            print('Thank you for sharing, hope you continue to have a happy day!')
+        else:
+            print('Alright then!')
+            
+    else:
+        print('Please start the bot again. Choose an emotion that is in the list and make sure the writing of your emotion looks the same as the list.')
+        
+    return end_of_chat()
+    
+def vent_chat():
+    start = input('Please type anything to initiate our conversation: ')
+    name = print('Hi, who am I talking to today?')
+    
+    answer_1 = input('My name is ')
+    mood = 'happy, sad, anxious, stressed, angry, excited.'
+    choose_mood = (' before we start, please choose what emotion you are feeling from this list: '+ mood)
+    print('Hello ' + answer_1 + ' ^-^/ ' + choose_mood)
+    
+    return venting_emotion()
+    
+def test_vent_chat():
+
+    assert vent_chat != int
+
+def test_venting_emotion():
+
+    assert callable(venting_emotion)
+    
+def test_end_of_chat():
+ 
+    assert type (end_of_chat == str)
